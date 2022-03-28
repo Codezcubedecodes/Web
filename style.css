@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: orange;
+}
+
+.queries {
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.row {
+    text-align: center;
+}
+
+.red-stripe {
+    background: red;
+    float: left;
+    width: 33.33%;
+}
+
+.green-stripe {
+    background: red;
+    float: left;
+    width: 33.33%;
+}
+
+.blue-stripe {
+    background: red;
+    float: left;
+    width: 33.33%;
+}
+
+@media screen and (max-width: 768px){
+ [class*="-stripe"] {
+     width: 100%;
+ }
+}
+
+.my-button {
+    display: inline-block;
+    background: orange;
+    padding: 8px;
+    margin: 5px;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+section  {
+  color :brown;
+  font-size: 1.5rem;
+  max-width: 70ch;
+}
+
+.my-button:hover {
+    background: red;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 5em 100px 30%;
+    grid-template-rows: 200px auto;
+    gap: 10px;
+}
+
+.pulser {
+    width: 30px;
+    height: 30px;
+    background: rebeccapurple;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    
+}
+
+.pulser::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: blueviolet;
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 1000ms cubic-bezier(1, 0.7, 0.5, 0.9) infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.4;
+    }
+}
+
+.next-startup {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.next-startup img {
+    width: 100%;
+    filter: grayscale() brightness(110%);
+}
+
+.next-startup::before,
+.next-startup::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.next-startup::after {
+    background: hotpink;
+    mix-blend-mode: multiply;
+}
+
+.next-startup::before {
+    background: navy;
+    mix-blend-mode: lighten;
+}
